@@ -51,7 +51,7 @@ const projects = [
 ];
 
 export default function Projects() {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -69,7 +69,6 @@ export default function Projects() {
   return (
     <section id="projects" ref={ref} className="py-24 bg-gray-50/50 dark:bg-white/[0.01]">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Label */}
         <div className="flex items-center gap-3 mb-4">
           <span className="font-mono text-accent text-sm tracking-widest">04.</span>
           <span className="font-mono text-gray-500 dark:text-gray-500 text-sm tracking-widest uppercase">Projects</span>
@@ -77,10 +76,10 @@ export default function Projects() {
         </div>
 
         <h2 className="font-display font-bold text-4xl text-gray-900 dark:text-white mb-4">
-          Things I've <span className="text-gradient">Built</span>
+          Things I&apos;ve <span className="text-gradient">Built</span>
         </h2>
         <p className="font-body text-gray-600 dark:text-gray-400 mb-12 max-w-xl">
-          Production-level applications built solo at DSHGSonic. Each project is live and used by real users.
+          Production-level applications built at DSHGSonic. Each project is live and used by real users.
         </p>
 
         {/* Featured Projects */}
@@ -93,39 +92,26 @@ export default function Projects() {
                 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              {/* Top accent line */}
               <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-              {/* Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="p-2.5 rounded-xl bg-accent/10 border border-accent/20">
                   <div className="w-5 h-5 rounded-sm bg-accent" />
                 </div>
                 <div className="flex items-center gap-2">
                   {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-accent transition-colors"
-                    >
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-accent transition-colors">
                       <Github size={18} />
                     </a>
                   )}
                   {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-accent transition-colors"
-                    >
+                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-accent transition-colors">
                       <ExternalLink size={18} />
                     </a>
                   )}
                 </div>
               </div>
 
-              {/* Content */}
               <h3 className="font-display font-bold text-gray-900 dark:text-white text-xl mb-3 group-hover:text-accent transition-colors duration-200">
                 {project.name}
               </h3>
@@ -133,13 +119,9 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              {/* Tags */}
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="font-mono text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
-                  >
+                  <span key={tag} className="font-mono text-xs px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
                     {tag}
                   </span>
                 ))}
@@ -189,7 +171,6 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* GitHub CTA */}
         <div className="mt-10 text-center">
           <a
             href="https://github.com/PALKARSANDIP"

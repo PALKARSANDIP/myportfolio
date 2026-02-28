@@ -21,7 +21,7 @@ export default function Hero() {
 
   useEffect(() => {
     const current = roles[roleIndex];
-    let timeout: ReturnType<typeof setTimeout>;
+    let timeout;
 
     if (!deleting && displayed.length < current.length) {
       timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 80);
@@ -72,7 +72,7 @@ export default function Hero() {
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            <span className="text-gray-900 dark:text-white">Hi, I'm </span>
+            <span className="text-gray-900 dark:text-white">Hi, I&apos;m </span>
             <span className="text-gradient">Sandip</span>
             <br />
             <span className="text-gray-900 dark:text-white">Palkar</span>
@@ -149,7 +149,6 @@ export default function Hero() {
             >
               <Mail size={18} />
             </a>
-
             <div className="ml-2 h-px w-12 bg-gray-300 dark:bg-gray-700" />
             <span className="font-mono text-xs text-gray-500 dark:text-gray-500 tracking-widest">
               FOLLOW ME

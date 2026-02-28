@@ -1,5 +1,3 @@
-
-
 "use client";
 import { useEffect, useRef, useState } from "react";
 
@@ -50,12 +48,12 @@ const skillGroups = [
 
 const techBadges = [
   "React.js", "Next.js", "Node.js", "MongoDB", "JavaScript",
-  "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Docker",
+  "HTML5", "CSS3", "Tailwind CSS", "Docker",
   "Git", "GitHub", "REST APIs", "SEO", "AI Tools",
 ];
 
 export default function Skills() {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -70,7 +68,6 @@ export default function Skills() {
   return (
     <section id="skills" ref={ref} className="py-24 bg-gray-50/50 dark:bg-white/[0.01]">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Label */}
         <div className="flex items-center gap-3 mb-4">
           <span className="font-mono text-accent text-sm tracking-widest">02.</span>
           <span className="font-mono text-gray-500 dark:text-gray-500 text-sm tracking-widest uppercase">Skills</span>

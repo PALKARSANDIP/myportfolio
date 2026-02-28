@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Moon, Sun, Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const links = [
   { label: "About", href: "#about" },
@@ -33,13 +34,22 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+
         {/* Logo */}
-        <a
-          href="#"
-          className="font-display font-bold text-xl tracking-tight"
-        >
-          <span className="text-gradient">SP</span>
-          <span className="text-gray-900 dark:text-white">.</span>
+        <a href="#" className="flex items-center gap-2.5 group">
+          <div className="relative w-10 h-10 rounded-xl overflow-hidden border-2 border-accent/30 group-hover:border-accent transition-all duration-300 group-hover:shadow-[0_0_12px_rgba(0,255,148,0.4)]">
+            <Image
+              src="/Image/avtar2.jpg"
+              alt="Sandip Palkar Logo"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <span className="font-display font-bold text-lg tracking-tight hidden sm:block">
+            <span className="text-gradient">Sandip</span>
+            <span className="text-gray-900 dark:text-white"> Palkar</span>
+          </span>
         </a>
 
         {/* Desktop Links */}
@@ -67,8 +77,6 @@ export default function Navbar() {
               {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
             </button>
           )}
-
-          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden p-2 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400"

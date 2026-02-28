@@ -32,7 +32,7 @@ const experiences = [
 ];
 
 export default function Experience() {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -47,7 +47,6 @@ export default function Experience() {
   return (
     <section id="experience" ref={ref} className="py-24">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Label */}
         <div className="flex items-center gap-3 mb-4">
           <span className="font-mono text-accent text-sm tracking-widest">03.</span>
           <span className="font-mono text-gray-500 dark:text-gray-500 text-sm tracking-widest uppercase">Experience</span>
@@ -55,7 +54,7 @@ export default function Experience() {
         </div>
 
         <h2 className="font-display font-bold text-4xl text-gray-900 dark:text-white mb-12">
-          Where I've <span className="text-gradient">Worked</span>
+          Where I&apos;ve <span className="text-gradient">Worked</span>
         </h2>
 
         <div className="relative">
@@ -83,7 +82,7 @@ export default function Experience() {
                 </div>
 
                 {/* Card */}
-                <div className="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-white/[0.02] hover:border-accent/40 dark:hover:border-accent/40 transition-all duration-300 group">
+                <div className="p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-white/[0.02] hover:border-accent/40 dark:hover:border-accent/40 transition-all duration-300">
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                     <div>
                       <div className="flex items-center gap-2 mb-1">

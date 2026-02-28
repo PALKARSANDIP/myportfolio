@@ -11,7 +11,7 @@ const highlights = [
 ];
 
 export default function About() {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef(null);
   const [visible, setVisible] = useState(false);
   const [imgError, setImgError] = useState(false);
 
@@ -36,16 +36,14 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 gap-16 items-start">
           {/* Text */}
-          <div
-            className={`transition-all duration-700 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}
-          >
+          <div className={`transition-all duration-700 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
             <h2 className="font-display font-bold text-4xl text-gray-900 dark:text-white mb-6">
               Building things<br />
               <span className="text-gradient">for the web.</span>
             </h2>
             <div className="space-y-4 font-body text-gray-600 dark:text-gray-400 leading-relaxed">
               <p>
-                I'm a Full Stack Developer based in India with a passion for building fast, scalable,
+                I&apos;m a Full Stack Developer based in India with a passion for building fast, scalable,
                 and user-friendly web applications. I graduated with a Bachelor of Engineering in 2024
                 and have been working professionally since 2022.
               </p>
@@ -56,7 +54,7 @@ export default function About() {
               </p>
               <p>
                 I enjoy the full spectrum of web development — from crafting pixel-perfect UIs to
-                designing RESTful APIs and optimizing application performance. I'm always looking for
+                designing RESTful APIs and optimizing application performance. I&apos;m always looking for
                 new challenges and opportunities to grow.
               </p>
             </div>
@@ -66,7 +64,7 @@ export default function About() {
               {!imgError ? (
                 <div className="relative w-48 h-48 rounded-2xl overflow-hidden border-2 border-accent/30 shadow-lg shadow-accent/10">
                   <Image
-                    src="/Image/SandipPalkar_Portfolio.jpg"
+                    src="/Image/avtar2.jpg"
                     alt="Sandip Palkar"
                     fill
                     className="object-cover"
@@ -75,20 +73,21 @@ export default function About() {
                   />
                 </div>
               ) : (
-                // Fallback if image not found
-                <div className="w-48 h-48 rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-700 flex flex-col items-center justify-center text-center p-4 text-gray-400 dark:text-gray-600">
-                  <span className="text-3xl mb-2">📸</span>
-                  <span className="font-mono text-xs">Image not found</span>
-                  <span className="font-mono text-xs text-accent mt-1">/public/Image/SandipPalkar.jpeg</span>
+                <div className="relative w-48 h-48 rounded-2xl overflow-hidden border-2 border-accent/30 shadow-lg shadow-accent/10">
+                  <Image
+                    src="/avatar_curly.svg"
+                    alt="Sandip Palkar"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
               )}
             </div>
           </div>
 
           {/* Stats grid */}
-          <div
-            className={`transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
-          >
+          <div className={`transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
             <div className="grid grid-cols-2 gap-4">
               {highlights.map((item, i) => (
                 <div
