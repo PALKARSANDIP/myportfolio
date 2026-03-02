@@ -7,7 +7,7 @@ export const metadata = {
   description: "Full Stack Developer with 2 years of experience building scalable web applications using React.js, Next.js, Node.js, and MongoDB.",
   keywords: ["Full Stack Developer", "React", "Next.js", "Node.js", "MongoDB", "Sandip Palkar"],
   authors: [{ name: "Sandip Palkar" }],
-  icons: { icon: "/favicon_boy.svg" },
+  icons: { icon: "/favicon.ico" },
   openGraph: {
     title: "Sandip Palkar | Full Stack Developer",
     description: "Full Stack Developer specializing in React.js, Next.js, Node.js & MongoDB",
