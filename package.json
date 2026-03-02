@@ -12,7 +12,8 @@
     "react": "^18",
     "react-dom": "^18",
     "lucide-react": "^0.400.0",
-    "next-themes": "^0.3.0"
+    "next-themes": "^0.3.0",
+    "@studio-freight/lenis": "^1.0.42"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1",

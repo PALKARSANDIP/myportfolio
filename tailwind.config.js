@@ -18,22 +18,19 @@ module.exports = {
         "accent-dark": "#00CC78",
       },
       animation: {
-        "fade-up": "fadeUp 0.6s ease forwards",
-        "fade-in": "fadeIn 0.5s ease forwards",
         blink: "blink 1s step-end infinite",
+        float: "float 6s ease-in-out infinite",
+        "float-delayed": "float 6s ease-in-out 2s infinite",
+        "spin-slow": "spin 20s linear infinite",
       },
       keyframes: {
-        fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(30px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
         blink: {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
         },
       },
     },
