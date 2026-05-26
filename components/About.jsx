@@ -67,6 +67,7 @@ export default function About() {
             {/* Photo */}
             <div className="reveal delay-5 mt-10">
               <div className="relative w-52 h-52 rounded-2xl overflow-hidden border-2 border-accent/30 shadow-xl shadow-accent/10 hover:border-accent hover:shadow-accent/20 transition-all duration-300 group">
+
                 <Image
                   src={imgError ? "/Image/avtar2.jpg" : "/Image/SandipPalkar.jpeg"}
                   alt="Sandip Palkar"
@@ -76,6 +77,14 @@ export default function About() {
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <div className="absolute -bottom-4 -left-5 flex items-center gap-2 px-3 py-2 rounded-2xl
+                bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg">
+                <span className="relative flex w-2 h-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60"></span>
+                  <span className="relative inline-flex rounded-full w-2 h-2 bg-accent"></span>
+                </span>
+                <span className="font-mono text-xs text-gray-700 dark:text-gray-300">GenAI Dev</span>
               </div>
             </div>
           </div>

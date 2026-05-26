@@ -153,7 +153,7 @@ export default function Hero() {
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent/20 to-blue-500/20 blur-xl scale-110 -z-10" />
 
               {/* Main image */}
-              <div className="relative w-64 h-72 xl:w-72 xl:h-80 rounded-3xl overflow-hidden border border-accent/20 shadow-2xl shadow-black/20">
+              {/* <div className="relative w-64 h-72 xl:w-72 xl:h-80 rounded-3xl overflow-hidden border border-accent/20 shadow-2xl shadow-black/20">
                 <Image
                   src={imgError ? "/Image/avtar2.jpg" : "/Image/SandipPalkar.jpeg"}
                   alt="Sandip Palkar"
@@ -162,29 +162,29 @@ export default function Hero() {
                   priority
                   onError={() => setImgError(true)}
                 />
-                {/* Gradient overlay */}
+            
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-              </div>
+              </div> */}
 
               {/* Decorative border */}
               <div className="absolute -bottom-2.5 -right-2.5 w-full h-full rounded-3xl border border-accent/15 -z-[1]" />
 
               {/* Floating badge — top right */}
-              <div className="absolute -top-4 -right-4 flex items-center gap-2 px-3 py-2 rounded-2xl
+              {/* <div className="absolute -top-4 -right-4 flex items-center gap-2 px-3 py-2 rounded-2xl
                 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg">
                 <span className="font-mono text-xs font-bold text-accent">2+ yrs</span>
                 <span className="font-mono text-xs text-gray-500 dark:text-gray-400">exp</span>
-              </div>
+              </div> */}
 
               {/* Floating badge — bottom left */}
-              <div className="absolute -bottom-4 -left-5 flex items-center gap-2 px-3 py-2 rounded-2xl
+              {/* <div className="absolute -bottom-4 -left-5 flex items-center gap-2 px-3 py-2 rounded-2xl
                 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg">
                 <span className="relative flex w-2 h-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60"></span>
                   <span className="relative inline-flex rounded-full w-2 h-2 bg-accent"></span>
                 </span>
                 <span className="font-mono text-xs text-gray-700 dark:text-gray-300">GenAI Dev</span>
-              </div>
+              </div> */}
             </div>
           </div>
 
