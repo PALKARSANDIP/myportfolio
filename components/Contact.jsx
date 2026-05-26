@@ -30,7 +30,7 @@ export default function Contact() {
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="reveal flex items-center gap-3 mb-4">
-          <span className="font-mono text-accent text-sm tracking-widest">05.</span>
+          <span className="font-mono text-accent text-sm tracking-widest">06.</span>
           <span className="font-mono text-gray-400 dark:text-gray-500 text-sm tracking-widest uppercase">Contact</span>
           <div className="h-px flex-1 max-w-[100px] bg-gradient-to-r from-gray-200 dark:from-gray-800 to-transparent" />
         </div>

@@ -10,23 +10,36 @@ const skillGroups = [
     border: "border-blue-500/20 hover:border-blue-400/50",
     barColor: "bg-blue-400",
     skills: [
-      { name: "React.js", level: 85 },
-      { name: "Next.js", level: 88 },
-      { name: "JavaScript", level: 85 },
-      { name: "HTML5 & CSS3", level: 90 },
-      { name: "Responsive Design", level: 88 },
+      { name: "React.js", level: 88 },
+      { name: "Next.js", level: 90 },
+      { name: "JavaScript (ES6+)", level: 87 },
+      { name: "HTML5 & CSS3", level: 92 },
+      { name: "Responsive Design", level: 90 },
     ],
   },
   {
-    category: "Backend",
+    category: "Backend & Database",
     emoji: "⚙️",
     color: "from-green-500/10 to-emerald-500/10",
     border: "border-green-500/20 hover:border-green-400/50",
     barColor: "bg-accent",
     skills: [
-      { name: "Node.js", level: 80 },
-      { name: "REST APIs", level: 78 },
-      { name: "MongoDB", level: 78 },
+      { name: "Node.js", level: 82 },
+      { name: "REST APIs", level: 80 },
+      { name: "MongoDB", level: 80 },
+    ],
+  },
+  {
+    category: "Generative AI",
+    emoji: "🤖",
+    color: "from-purple-500/10 to-pink-500/10",
+    border: "border-purple-500/20 hover:border-purple-400/50",
+    barColor: "bg-purple-400",
+    skills: [
+      { name: "Prompt Engineering", level: 95 },
+      { name: "LLM Integration", level: 90 },
+      { name: "AI-Assisted Development", level: 88 },
+      { name: "AI Automation Tools", level: 85 },
     ],
   },
   {
@@ -36,29 +49,19 @@ const skillGroups = [
     border: "border-orange-500/20 hover:border-orange-400/50",
     barColor: "bg-orange-400",
     skills: [
-      { name: "Git & GitHub", level: 85 },
-      { name: "Docker", level: 70 },
-      { name: "SEO Optimization", level: 72 },
-    ],
-  },
-  {
-    category: "Other",
-    emoji: "✨",
-    color: "from-purple-500/10 to-pink-500/10",
-    border: "border-purple-500/20 hover:border-purple-400/50",
-    barColor: "bg-purple-400",
-    skills: [
-      { name: "AI Prompt Engineering", level: 95 },
-      { name: "Dynamic Sitemaps", level: 80 },
+      { name: "Git & GitHub", level: 87 },
+      { name: "Docker", level: 72 },
+      { name: "SEO Optimization", level: 82 },
       { name: "Performance Optimization", level: 78 },
     ],
   },
 ];
 
 const techBadges = [
-  "React.js", "Next.js", "Node.js", "MongoDB", "JavaScript",
+  "React.js", "Next.js", "Node.js", "MongoDB", "JavaScript (ES6+)",
   "HTML5", "CSS3", "Tailwind CSS", "Docker", "Git",
-  "GitHub", "REST APIs", "SEO", "AI Tools", "Vercel",
+  "GitHub", "REST APIs", "LLM Integration", "Prompt Engineering",
+  "AI Automation", "SEO", "Vercel",
 ];
 
 function SkillBar({ name, level, barColor, animate }) {
@@ -107,7 +110,7 @@ export default function Skills() {
           My Tech <span className="text-gradient">Stack</span>
         </h2>
         <p className="reveal delay-1 font-body text-gray-600 dark:text-gray-400 mb-12 max-w-xl text-lg">
-          Technologies I use daily to build production-grade full stack applications.
+          Technologies I use daily to build production-grade full stack applications — with Generative AI at the core.
         </p>
 
         {/* Badge Cloud */}

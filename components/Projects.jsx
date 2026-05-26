@@ -1,5 +1,5 @@
 "use client";
-import { ExternalLink, Github, Star } from "lucide-react";
+import { ExternalLink, Github, Star, Cpu } from "lucide-react";
 import { useReveal } from "@/components/useReveal";
 
 const projects = [
@@ -14,7 +14,7 @@ const projects = [
   },
   {
     name: "docuPitch.com",
-    description: "Document management platform with AI-based workflow integration. Built backend services for document handling and integrated intelligent automation features.",
+    description: "Document management platform with AI-based workflow integration. Built backend services for intelligent document handling and prompt-driven automation features.",
     tags: ["Next.js", "Node.js", "AI Integration", "MongoDB"],
     live: "https://docupitch.com/",
     featured: true,
@@ -23,12 +23,22 @@ const projects = [
   },
   {
     name: "thereIsSomeone.com",
-    description: "End-to-end web application featuring user authentication, complete API handling, and database management. Solo-built from scratch.",
+    description: "End-to-end web application featuring user authentication, complete API handling, and database management — built solo from scratch.",
     tags: ["React.js", "Node.js", "MongoDB", "Auth"],
     live: "https://thereissomeone.com/",
     featured: true,
     color: "from-green-500/10 to-emerald-500/10",
     border: "border-green-500/20",
+  },
+  {
+    name: "dairyindustry.in",
+    description: "Production-level event website for Godwa Dairy Expo 2026. Built with GenAI-assisted development, advanced SEO (metadata, dynamic sitemap, structured data), and deployed to production.",
+    tags: ["Next.js", "GenAI-Assisted", "Advanced SEO", "Production"],
+    live: "https://dairyindustry.in/",
+    featured: true,
+    color: "from-amber-500/10 to-orange-500/10",
+    border: "border-amber-500/20",
+    badge: "GenAI",
   },
   {
     name: "dshgsonic.com",
@@ -40,13 +50,14 @@ const projects = [
     border: "",
   },
   {
-    name: "AI-Based Web Application",
-    description: "Built prompt-based automation features using AI tools. Integrated frontend with backend APIs for seamless user experience and optimised development workflows.",
-    tags: ["AI Prompt Engineering", "React.js", "Node.js", "Automation"],
+    name: "AI-Powered Web Application",
+    description: "GenAI-integrated application using LLM APIs and prompt engineering (codegen & prompt-based). Designed a frontend-to-backend pipeline for seamless AI-driven user experiences.",
+    tags: ["LLM APIs", "Prompt Engineering", "React.js", "Node.js"],
     live: null,
     featured: false,
     color: "",
     border: "",
+    badge: "GenAI",
   },
 ];
 
@@ -73,8 +84,8 @@ export default function Projects() {
           Production-level applications — live, real users, real impact.
         </p>
 
-        {/* Featured grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        {/* Featured grid — 2×2 */}
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
           {featured.map((project, i) => (
             <div
               key={project.name}
@@ -83,12 +94,20 @@ export default function Projects() {
                 hover:border-accent dark:hover:border-accent hover:-translate-y-2
                 transition-all duration-300 hover:shadow-xl dark:hover:shadow-black/30`}
             >
-              {/* Top line */}
+              {/* Top shimmer line */}
               <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="flex items-start justify-between mb-5">
-                <div className="p-3 rounded-xl bg-accent/10 border border-accent/20 group-hover:bg-accent group-hover:border-accent transition-all duration-300">
-                  <Star size={16} className="text-accent group-hover:text-black transition-colors" />
+                <div className="flex items-center gap-2">
+                  <div className="p-3 rounded-xl bg-accent/10 border border-accent/20 group-hover:bg-accent group-hover:border-accent transition-all duration-300">
+                    <Star size={16} className="text-accent group-hover:text-black transition-colors" />
+                  </div>
+                  {project.badge && (
+                    <span className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 font-mono text-xs text-purple-400">
+                      <Cpu size={10} />
+                      {project.badge}
+                    </span>
+                  )}
                 </div>
                 {project.live && (
                   <a href={project.live} target="_blank" rel="noopener noreferrer"
@@ -126,9 +145,17 @@ export default function Projects() {
                 transition-all duration-300 hover:-translate-y-0.5`}
             >
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-display font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors">
-                  {project.name}
-                </h3>
+                <div className="flex items-center gap-2">
+                  <h3 className="font-display font-semibold text-gray-900 dark:text-white group-hover:text-accent transition-colors">
+                    {project.name}
+                  </h3>
+                  {project.badge && (
+                    <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 font-mono text-xs text-purple-400">
+                      <Cpu size={9} />
+                      {project.badge}
+                    </span>
+                  )}
+                </div>
                 {project.live && (
                   <a href={project.live} target="_blank" rel="noopener noreferrer"
                     className="text-gray-400 hover:text-accent transition-colors">

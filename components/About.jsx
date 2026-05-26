@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
-import { Code2, Layers, Zap, Globe } from "lucide-react";
+import { Code2, Layers, Zap, Globe, Trophy } from "lucide-react";
 import Image from "next/image";
 import { useReveal } from "@/components/useReveal";
 
 const highlights = [
-  { icon: Code2, label: "2 Years", sub: "Professional Experience" },
+  { icon: Code2, label: "2+ Years", sub: "Professional Experience" },
   { icon: Layers, label: "6+ Apps", sub: "Production Deployed" },
-  { icon: Zap, label: "AI Tools", sub: "Prompt Engineering" },
+  { icon: Zap, label: "GenAI", sub: "LLM & Prompt Engineering" },
   { icon: Globe, label: "Full Stack", sub: "End-to-End Dev" },
 ];
 
@@ -17,7 +17,6 @@ export default function About() {
 
   return (
     <section id="about" ref={ref} className="py-28 relative">
-      {/* Section bg accent */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6">
@@ -39,32 +38,43 @@ export default function About() {
             <div className="space-y-4 font-body text-gray-600 dark:text-gray-400 leading-relaxed">
               <p className="reveal delay-1">
                 I&apos;m a Full Stack Developer based in India with a passion for building fast, scalable,
-                and user-friendly web applications. I graduated with a Bachelor of Engineering in 2024
-                and have been working professionally since 2022.
+                and user-friendly web applications. I graduated with a Bachelor of Engineering in IT
+                Engineering in 2024 and have been working professionally since 2022.
               </p>
               <p className="reveal delay-2">
                 Currently at <span className="text-accent font-semibold">DSHGSonic</span>, I develop
                 and maintain 6+ production-level web applications using React.js, Next.js, and Node.js.
-                I also work with AI-based prompt automation tools to streamline development workflows.
+                I integrate <span className="text-accent font-semibold">Generative AI</span> features —
+                LLM-powered workflows, prompt-based automation, and AI-assisted code generation — to
+                accelerate development and deliver smarter products.
               </p>
               <p className="reveal delay-3">
                 I enjoy the full spectrum of web development — from crafting pixel-perfect UIs to
-                designing RESTful APIs and optimizing application performance.
+                designing RESTful APIs, optimising performance, and implementing advanced SEO strategies.
               </p>
             </div>
 
+            {/* Award badge */}
+            <div className="reveal delay-4 mt-8 inline-flex items-center gap-3 px-4 py-3 rounded-2xl
+              border border-amber-400/30 bg-amber-400/5 hover:bg-amber-400/10 transition-colors duration-200">
+              <Trophy size={16} className="text-amber-400 shrink-0" />
+              <div>
+                <p className="font-display font-semibold text-gray-900 dark:text-white text-sm">Best Performer Award — Q1 2026</p>
+                <p className="font-mono text-xs text-gray-500 dark:text-gray-500">DSHGSonic · GenAI Integration & High-Quality Delivery</p>
+              </div>
+            </div>
+
             {/* Photo */}
-            <div className="reveal delay-4 mt-10">
+            <div className="reveal delay-5 mt-10">
               <div className="relative w-52 h-52 rounded-2xl overflow-hidden border-2 border-accent/30 shadow-xl shadow-accent/10 hover:border-accent hover:shadow-accent/20 transition-all duration-300 group">
                 <Image
-                  src={imgError ? "/avatar_curly.svg" : "/Image/image.jpeg"}
+                  src={imgError ? "/Image/avtar2.jpg" : "/Image/SandipPalkar.jpeg"}
                   alt="Sandip Palkar"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   onError={() => setImgError(true)}
                   priority
                 />
-                {/* Overlay shimmer */}
                 <div className="absolute inset-0 bg-gradient-to-t from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </div>
@@ -98,7 +108,7 @@ export default function About() {
                   ["Email", "sandippalkar72@gmail.com"],
                   ["Phone", "+91 876 7505569"],
                   ["Location", "India 🇮🇳"],
-                  ["Education", "B.E. Graduate (2024)"],
+                  ["Education", "B.E. IT Engineering (2024)"],
                   ["Status", "Open to Work ✅"],
                 ].map(([key, val]) => (
                   <div key={key} className="flex items-start gap-4">
