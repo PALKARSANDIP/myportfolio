@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Github, Linkedin, Mail, ArrowDown, Download } from "lucide-react";
-import Image from "next/image";
 
 const roles = [
   "Full Stack Developer",
@@ -16,7 +15,6 @@ export default function Hero() {
   const [displayed, setDisplayed] = useState("");
   const [deleting, setDeleting] = useState(false);
   const [visible, setVisible] = useState(false);
-  const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 100);
@@ -59,8 +57,8 @@ export default function Hero() {
       <div className="relative max-w-6xl mx-auto px-6 pt-28 pb-16 w-full">
         <div className="flex flex-col lg:flex-row items-start lg:items-center gap-12 lg:gap-20">
 
-          {/* Left: Text Content */}
-          <div className="flex-1 max-w-2xl">
+          {/* Left: Name, Role, CTAs, Socials */}
+          <div className="flex-1">
 
             {/* Available badge */}
             <div className={`inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-accent/25 bg-accent/5 mb-10
@@ -73,10 +71,8 @@ export default function Hero() {
             </div>
 
             {/* Name */}
-            <h1
-              className={`font-display font-extrabold text-5xl sm:text-6xl md:text-7xl leading-tight mb-4 transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                }`}
-            >
+            <h1 className={`font-display font-extrabold text-5xl sm:text-6xl md:text-7xl leading-tight mb-4
+              transition-all duration-700 delay-100 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
               <span className="text-gray-900 dark:text-white">Hi, I&apos;m </span>
               <span className="text-gradient">Sandip</span>
               <br />
@@ -84,24 +80,15 @@ export default function Hero() {
             </h1>
 
             {/* Typewriter */}
-            <div className={`font-display text-xl sm:text-2xl font-semibold text-gray-500 dark:text-gray-400 mb-7 h-9
+            <div className={`font-display text-xl sm:text-2xl font-semibold text-gray-500 dark:text-gray-400 mb-10 h-9
               transition-all duration-700 delay-200 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
               <span>{displayed}</span>
               <span className="animate-blink text-accent ml-0.5">|</span>
             </div>
 
-            {/* Summary */}
-            <p className={`font-body text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-2xl mb-10
-              transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-              Full Stack Developer with <span className="text-accent font-medium">2+ years</span> of experience building
-              scalable, production-ready web applications. Specialised in{" "}
-              <span className="text-accent font-medium">Generative AI integration</span> — LLM-powered features,
-              prompt engineering, and AI-assisted development workflows.
-            </p>
-
             {/* CTAs */}
             <div className={`flex flex-wrap items-center gap-4 mb-12
-              transition-all duration-700 delay-400 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+              transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
               <a href="#projects"
                 className="group inline-flex items-center gap-2 px-7 py-3.5 bg-accent text-black font-display font-bold rounded-xl
                   hover:bg-accent-dark transition-all duration-200 hover:scale-105 active:scale-95 hover:shadow-[0_8px_30px_rgba(0,255,148,0.35)]">
@@ -124,7 +111,7 @@ export default function Hero() {
 
             {/* Social Links */}
             <div className={`flex items-center gap-4
-              transition-all duration-700 delay-500 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+              transition-all duration-700 delay-400 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
               {[
                 { href: "https://github.com/PALKARSANDIP", icon: Github, label: "GitHub" },
                 { href: "https://www.linkedin.com/in/sandip-palkar-3a34b024b/", icon: Linkedin, label: "LinkedIn" },
@@ -145,46 +132,35 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Profile Image (desktop only) */}
-          <div className={`hidden lg:flex flex-shrink-0 items-center justify-center
-            transition-all duration-700 delay-300 ${visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
-            <div className="relative">
-              {/* Offset glow ring */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent/20 to-blue-500/20 blur-xl scale-110 -z-10" />
+          {/* Right: Paragraph */}
+          <div className={`flex-1 lg:max-w-md transition-all duration-700 delay-300
+            ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
 
-              {/* Main image */}
-              {/* <div className="relative w-64 h-72 xl:w-72 xl:h-80 rounded-3xl overflow-hidden border border-accent/20 shadow-2xl shadow-black/20">
-                <Image
-                  src={imgError ? "/Image/avtar2.jpg" : "/Image/SandipPalkar.jpeg"}
-                  alt="Sandip Palkar"
-                  fill
-                  className="object-cover object-top"
-                  priority
-                  onError={() => setImgError(true)}
-                />
-            
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-              </div> */}
+            {/* Decorative top bar */}
+            <div className="w-10 h-1 bg-accent rounded-full mb-6" />
 
-              {/* Decorative border */}
-              <div className="absolute -bottom-2.5 -right-2.5 w-full h-full rounded-3xl border border-accent/15 -z-[1]" />
+            <p className="font-body text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">
+              Full Stack Developer with{" "}
+              <span className="text-accent font-medium">2+ years</span> of experience building
+              scalable, production-ready web applications. Specialised in{" "}
+              <span className="text-accent font-medium">Generative AI integration</span> — LLM-powered
+              features, prompt engineering, and AI-assisted development workflows — to deliver smarter
+              products.
+            </p>
 
-              {/* Floating badge — top right */}
-              {/* <div className="absolute -top-4 -right-4 flex items-center gap-2 px-3 py-2 rounded-2xl
-                bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg">
-                <span className="font-mono text-xs font-bold text-accent">2+ yrs</span>
-                <span className="font-mono text-xs text-gray-500 dark:text-gray-400">exp</span>
-              </div> */}
-
-              {/* Floating badge — bottom left */}
-              {/* <div className="absolute -bottom-4 -left-5 flex items-center gap-2 px-3 py-2 rounded-2xl
-                bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg">
-                <span className="relative flex w-2 h-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60"></span>
-                  <span className="relative inline-flex rounded-full w-2 h-2 bg-accent"></span>
-                </span>
-                <span className="font-mono text-xs text-gray-700 dark:text-gray-300">GenAI Dev</span>
-              </div> */}
+            {/* Stats row */}
+            <div className="grid grid-cols-3 gap-4 mt-8">
+              {[
+                { value: "6+", label: "Apps Built" },
+                { value: "2+", label: "Years Exp." },
+                { value: "95%", label: "AI Proficiency" },
+              ].map((stat) => (
+                <div key={stat.label} className="p-4 rounded-2xl border border-gray-200 dark:border-gray-800
+                  bg-gray-50/80 dark:bg-white/[0.02] text-center hover:border-accent/50 transition-colors duration-200">
+                  <div className="font-display font-bold text-2xl text-gradient mb-1">{stat.value}</div>
+                  <div className="font-mono text-xs text-gray-500 dark:text-gray-500">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
 

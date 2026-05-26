@@ -28,14 +28,59 @@ export default function About() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-16 items-start">
-          {/* Left */}
+
+          {/* Left — Heading, Stats, Award */}
           <div>
-            <h2 className="reveal reveal-left font-display font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-8 leading-tight">
+            <h2 className="reveal reveal-left font-display font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-10 leading-tight">
               Building things<br />
               <span className="text-gradient">for the web.</span>
             </h2>
 
-            <div className="space-y-4 font-body text-gray-600 dark:text-gray-400 leading-relaxed">
+            {/* Stats grid */}
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              {highlights.map((item, i) => (
+                <div
+                  key={item.label}
+                  className={`reveal delay-${i + 1} group p-6 rounded-2xl border border-gray-200 dark:border-gray-800
+                    hover:border-accent dark:hover:border-accent bg-gray-50/80 dark:bg-white/[0.02]
+                    hover:bg-accent/5 transition-all duration-300 hover:-translate-y-1`}
+                >
+                  <item.icon size={22} className="text-accent mb-4" />
+                  <div className="font-display font-bold text-2xl text-gray-900 dark:text-white mb-1">{item.label}</div>
+                  <div className="font-body text-sm text-gray-500 dark:text-gray-500">{item.sub}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Award badge */}
+            <div className="reveal delay-5 inline-flex items-center gap-3 px-4 py-3 rounded-2xl w-full
+              border border-amber-400/30 bg-amber-400/5 hover:bg-amber-400/10 transition-colors duration-200">
+              <Trophy size={16} className="text-amber-400 shrink-0" />
+              <div>
+                <p className="font-display font-semibold text-gray-900 dark:text-white text-sm">Best Performer Award — Q1 2026</p>
+                <p className="font-mono text-xs text-gray-500 dark:text-gray-500">DSHGSonic · GenAI Integration & High-Quality Delivery</p>
+              </div>
+            </div>
+
+            {/* Profile photo */}
+            <div className="reveal delay-6 mt-8">
+              <div className="relative w-52 h-52 rounded-2xl overflow-hidden border-2 border-accent/30 shadow-xl shadow-accent/10 hover:border-accent hover:shadow-accent/20 transition-all duration-300 group">
+                <Image
+                  src={imgError ? "/Image/avtar2.jpg" : "/Image/SandipPalkar.jpeg"}
+                  alt="Sandip Palkar"
+                  fill
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  onError={() => setImgError(true)}
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            </div>
+          </div>
+
+          {/* Right — Bio paragraphs + Quick Info */}
+          <div>
+            <div className="space-y-4 font-body text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
               <p className="reveal delay-1">
                 I&apos;m a Full Stack Developer based in India with a passion for building fast, scalable,
                 and user-friendly web applications. I graduated with a Bachelor of Engineering in IT
@@ -54,62 +99,9 @@ export default function About() {
               </p>
             </div>
 
-            {/* Award badge */}
-            <div className="reveal delay-4 mt-8 inline-flex items-center gap-3 px-4 py-3 rounded-2xl
-              border border-amber-400/30 bg-amber-400/5 hover:bg-amber-400/10 transition-colors duration-200">
-              <Trophy size={16} className="text-amber-400 shrink-0" />
-              <div>
-                <p className="font-display font-semibold text-gray-900 dark:text-white text-sm">Best Performer Award — Q1 2026</p>
-                <p className="font-mono text-xs text-gray-500 dark:text-gray-500">DSHGSonic · GenAI Integration & High-Quality Delivery</p>
-              </div>
-            </div>
-
-            {/* Photo */}
-            <div className="reveal delay-5 mt-10">
-              <div className="relative w-52 h-52 rounded-2xl overflow-hidden border-2 border-accent/30 shadow-xl shadow-accent/10 hover:border-accent hover:shadow-accent/20 transition-all duration-300 group">
-
-                <Image
-                  src={imgError ? "/Image/avtar2.jpg" : "/Image/SandipPalkar.jpeg"}
-                  alt="Sandip Palkar"
-                  fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                  onError={() => setImgError(true)}
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div className="absolute -bottom-4 -left-5 flex items-center gap-2 px-3 py-2 rounded-2xl
-                bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-lg">
-                <span className="relative flex w-2 h-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-60"></span>
-                  <span className="relative inline-flex rounded-full w-2 h-2 bg-accent"></span>
-                </span>
-                <span className="font-mono text-xs text-gray-700 dark:text-gray-300">GenAI Dev</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right */}
-          <div>
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              {highlights.map((item, i) => (
-                <div
-                  key={item.label}
-                  className={`reveal delay-${i + 1} group p-6 rounded-2xl border border-gray-200 dark:border-gray-800
-                    hover:border-accent dark:hover:border-accent bg-gray-50/80 dark:bg-white/[0.02]
-                    hover:bg-accent/5 transition-all duration-300 hover:-translate-y-1`}
-                >
-                  <item.icon size={22} className="text-accent mb-4" />
-                  <div className="font-display font-bold text-2xl text-gray-900 dark:text-white mb-1">{item.label}</div>
-                  <div className="font-body text-sm text-gray-500 dark:text-gray-500">{item.sub}</div>
-                </div>
-              ))}
-            </div>
-
             {/* Quick Info */}
-            <div className="reveal delay-5 p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50/80 dark:bg-white/[0.02]">
-              <h3 className="font-display font-semibold text-gray-900 dark:text-white mb-5 text-xs tracking-widest uppercase text-accent">
+            <div className="reveal delay-4 p-6 rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50/80 dark:bg-white/[0.02]">
+              <h3 className="font-display font-semibold mb-5 text-xs tracking-widest uppercase text-accent">
                 Quick Info
               </h3>
               <dl className="space-y-3">
@@ -128,6 +120,7 @@ export default function About() {
               </dl>
             </div>
           </div>
+
         </div>
       </div>
     </section>
